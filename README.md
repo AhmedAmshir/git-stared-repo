@@ -1,5 +1,8 @@
 # Using Lumen Micro Framework
 
+## Prerequisites
+- Docker
+- Docker Compose
 ## How to run this task
 
 - Once clone the task, go to the project root inside **public_html/git-stared-repo** directory and run **./start.sh** to install and build the project.
@@ -12,11 +15,11 @@
 
 - First we must use these `e, gt, gte, lt, lte` before the filteration value separated by `:`  like `gt:100` `e:php` `lt:2020-01-10&`.
 ```sh
-e    => equal
-gt   => greater than
+e   => equal
+gt  => greater than
 gte => greater than or equal
-lt    => lower than
-lte  => lower than or equal
+lt  => lower than
+lte => lower than or equal
 ```
 
 ```sh
