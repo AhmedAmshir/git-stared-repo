@@ -1,0 +1,29 @@
+version: '3'
+
+services:
+  php-fpm:
+    container_name: stared_repo_php
+    build: build/php-fpm
+    expose:
+      - '9000'
+    volumes:
+      - ./public_html:/var/www/html
+    networks: 
+      - git_stared_repo
+    restart: always
+
+  nginx-web:
+    container_name: stared_repo_nginx
+    build: build/nginx
+    ports:
+        - '8070:70'
+    volumes:
+        - ./public_html:/var/www/html
+        - ./build/nginx/sites-enabled:/etc/nginx/sites-enabled
+    networks: 
+      - git_stared_repo
+    restart: always
+
+networks:
+  git_stared_repo:
+     driver: bridge
